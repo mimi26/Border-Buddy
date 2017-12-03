@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { reduxForm, Field } from 'redux-form';
-import RaisedButton from 'material-ui/RaisedButton';
+import Button from 'material-ui/Button';
 import { TextField } from 'redux-form-material-ui';
 import { Card } from 'material-ui/Card';
 import { Link } from 'react-router';
@@ -62,13 +62,13 @@ class UpdateUser extends Component {
 							onChange={handlePhoneChange}
 							style={style.form}
 						/>
-						<RaisedButton
+						<Button
 							type="submit"
-							label="Save"
+							raised
 							disabled={submitting || !valid}
 							primary={true} 
 							style={style.button}
-						/>
+						>Save</Button>
 					</form>
 				</div>
 			</Card>

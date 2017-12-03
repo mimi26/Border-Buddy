@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { reduxForm } from 'redux-form';
-import { Dialog, FlatButton, RaisedButton } from 'material-ui';
+import { Dialog, Button } from 'material-ui';
 import Form from '../components/FormContainer';
 import FlightConfirmation from '../components/FlightConfirmation';
 import { signUpTraveler } from '../actions/signUp';
@@ -48,21 +48,21 @@ class SignUpContainer extends Component {
 
   render() {
     const confirmActions = [
-      <FlatButton
+      <Button
         label="Cancel"
         primary={true}
         onTouchTap={this.handleClose}
       />,
-      <RaisedButton
+      <Button
         id="submit-flight-confirmation"
-        label="Submit"
+        raised
         primary={true}
         onTouchTap={this.confirmSubmit}
-      />
+      >Submit</Button>
     ];
 
     const cancelActions = [
-      <FlatButton
+      <Button
         label="OK"
         primary={true}
         onTouchTap={this.handleClose}

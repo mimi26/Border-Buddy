@@ -1,6 +1,6 @@
 import React from 'react';
 import { reduxForm, Field } from 'redux-form';
-import RaisedButton from 'material-ui/RaisedButton';
+import Button from 'material-ui/Button';
 import { TextField } from 'redux-form-material-ui';
 import { Link } from 'react-router';
 import { Card } from 'material-ui/Card';
@@ -34,13 +34,13 @@ const AdminLogin = ({ handleSubmit, pristine, reset, submitting, handleEmailChan
 						onChange={handlePasswordChange}
 						style={style.form}
 					/>
-					<RaisedButton 
+					<Button 
 						type="submit"
-						label="Login"
+						raised
 						disabled={pristine || submitting}
 						primary={true} 
 						style={style.button}
-					/>
+					>Login</Button>
 				</form>
 			</div>
 		</Card>

@@ -1,10 +1,10 @@
 import React from 'react';
-import {Dialog, FlatButton} from 'material-ui';
+import {Dialog, Button} from 'material-ui';
 import FlightConfirmation from './FlightConfirmation';
 
 export default ({ confirmSubmit, open, flight }) => {
   const actions = [
-    <FlatButton
+    <Button
       key={1}
       id="dismiss-confirmation"
       label="OK"

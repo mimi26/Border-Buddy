@@ -1,9 +1,9 @@
 import React from 'react';
-import {Dialog, FlatButton} from 'material-ui';
+import {Dialog, Button} from 'material-ui';
 
 export default ({ open, success, handleClose }) => {
   const actions = [
-    <FlatButton 
+    <Button 
       key={1}
       label="OK"
       primary={true}

@@ -1,6 +1,6 @@
 import React, { Component} from 'react';
 import { Card, CardActions, CardTitle, CardText } from 'material-ui/Card';
-import RaisedButton from 'material-ui/RaisedButton';
+import Button from 'material-ui/Button';
 import { browserHistory } from 'react-router';
 import { setStatusColor } from './styles';
 
@@ -38,11 +38,11 @@ const AllTravelersMobile = ({ travelers }) => {
                     <CardText>{`Flight Status: ${flightStatus}`}</CardText>
                   </div>
                 <CardActions>
-                  <RaisedButton 
-                    label="View/Edit Traveler"
+                  <Button 
+                    raised
                     primary={true}
                     onTouchTap={() => browserHistory.push(`/admin/travelers/${traveler.id}`)}
-                  />
+                  >View/Edit Traveler</Button>
                 </CardActions>
               </Card>
             </div>

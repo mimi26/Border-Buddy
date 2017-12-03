@@ -1,26 +1,26 @@
 import React from 'react';
-import {Dialog, RaisedButton} from 'material-ui';
+import {Dialog, Button} from 'material-ui';
 
 export default ({ confirmDelete, handleClose, open, traveler }) => {
   
   const actions = [
-    <RaisedButton
+    <Button
       key={1}
       id="confirm-delete"
-      label="Yes, delete this traveler"
+      raised
       onTouchTap={confirmDelete}
   		backgroundColor="#800000"
       labelColor="#FFFFFF"
       style={style.button}
-      />,
-    <RaisedButton
+      >Yes, delete this traveler</Button>,
+    <Button
       key={2}
       id="cancel-delete"
-      label="No, do not delete this traveler"
+      raised
       onTouchTap={handleClose}
       primary={true}
       style={style.button}
-      />
+      >No, do not delete this traveler</Button>
   ];
 
   return (

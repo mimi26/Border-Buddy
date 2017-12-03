@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import AdminSignUp from "../components/Admin/AdminSignUp";
 import { signup, updateUser } from '../actions/auth';
 import Dialog from 'material-ui/Dialog';
-import FlatButton from 'material-ui/FlatButton';
+import Button from 'material-ui/Button';
 
 class AdminSignUpContainer extends Component {
 	constructor(props) {
@@ -55,7 +55,7 @@ class AdminSignUpContainer extends Component {
 
 	render() {
 		let actions = [
-			<FlatButton
+			<Button
 				label="OK"
 				primary={true}
 				onTouchTap={this.handleClose}

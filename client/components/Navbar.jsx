@@ -1,5 +1,5 @@
 import React from 'react';
-import RaisedButton from 'material-ui/RaisedButton';
+import Button from 'material-ui/Button';
 import { Link } from 'react-router';
 
 const style = {
@@ -11,17 +11,17 @@ export default () => (
 	<div className="navbar col-12">
 		<div className="inline-block col-4">
 			<Link to="/why">
-				<RaisedButton primary={true} label="Why Border Buddy?" style={style} />
+				<Button raised style={style} >Why Border Buddy?</Button>
 			</Link>
 		</div>
 		<div className="inline-block col-4">
 			<Link to="/register" className={'register-link'}>
-				<RaisedButton primary={true} label="Register" style={style} />
+				<Button raised style={style} >Register</Button>
 			</Link>
 		</div>
 		<div className="inline-block col-4">
 			<Link to="/about">
-				<RaisedButton primary={true} label="About Us" style={style} />
+				<Button raised style={style} >About Us</Button>
 			</Link>
 		</div>
 	</div>

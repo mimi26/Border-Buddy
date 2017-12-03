@@ -1,14 +1,14 @@
 import React from 'react';
 import { browserHistory } from 'react-router';
-import IconMenu from 'material-ui/IconMenu';
-import IconButton from 'material-ui/IconButton';
-import MenuItem from 'material-ui/MenuItem';
-import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
+import Menu from 'material-ui/Menu';
+import Button from 'material-ui/Button';
+import MenuItem from 'material-ui/Menu/MenuItem';
+import MoreVertIcon from 'material-ui-icons/MoreVert';
 
 export default ({ onCreateUserClick, onSignoutClick }) => (
-  <IconMenu
+  <Menu
     iconButtonElement={
-      <IconButton><MoreVertIcon color={'white'}/></IconButton>
+      <Button><MoreVertIcon color={'white'}/></Button>
     }
     targetOrigin={{horizontal: 'right', vertical: 'top'}}
     anchorOrigin={{horizontal: 'right', vertical: 'top'}}
@@ -17,5 +17,5 @@ export default ({ onCreateUserClick, onSignoutClick }) => (
     <MenuItem primaryText="Create New User" onClick={() => browserHistory.push('/admin/createuser')}/>
     <MenuItem primaryText="Update Profile" onClick={() => browserHistory.push('/admin/updateprofile')} />
     <MenuItem primaryText="Sign out" onClick={onSignoutClick}/>
-  </IconMenu>
+  </Menu>
 )

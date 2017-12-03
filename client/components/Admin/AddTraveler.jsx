@@ -1,6 +1,6 @@
 import React from 'react';
-import { TextField, DatePicker, SelectField } from 'redux-form-material-ui';
-import { MenuItem, RaisedButton } from 'material-ui';
+import { TextField, Select } from 'redux-form-material-ui';
+import { MenuItem, Button } from 'material-ui';
 import { Field, reduxForm } from 'redux-form';
 import { required, phone, email, uppercase, validateCode, numbersOnly } from '../../utils/validations';
 import AirlinePicker from '../AirlinePicker';
@@ -61,7 +61,7 @@ export class AddTraveler extends React.Component {
             <div className="field-container col-12 md-col md-col-6">
               <Field
                 name="representative"
-                component={SelectField}
+                component={Select}
                 floatingLabelText="Assign To"
                 style={style.input}
                 errorStyle={style.error}
@@ -101,7 +101,7 @@ export class AddTraveler extends React.Component {
             <div className="field-container col-12 md-col md-col-6">
               <Field
                 name="requireInterpreter"
-                component={SelectField}
+                component={Select}
                 floatingLabelText="Traveler requires interpreter?"
                 style={style.input}
                 errorStyle={style.error}
@@ -163,7 +163,7 @@ export class AddTraveler extends React.Component {
             <div className="field-container col-12 md-col md-col-6">
               <Field
                 name="connectivity"
-                component={SelectField}
+                component={Select}
                 floatingLabelText="Smartphone?"
                 style={style.input}
                 errorStyle={style.error}
@@ -180,7 +180,7 @@ export class AddTraveler extends React.Component {
             <div className="field-container col-12 md-col md-col-4">
               <Field
                 name="arrivalTime"
-                component={DatePicker}
+                component={TextField}
                 format={null}
                 floatingLabelText="What day do you arrive?"
                 style={style.input}
@@ -259,7 +259,7 @@ export class AddTraveler extends React.Component {
             <div className="field-container col-12 md-col md-col-6">
               <Field
                 name="flightStatus"
-                component={SelectField}
+                component={Select}
                 floatingLabelText="Flight Status"
                 style={style.input}
                 errorStyle={style.error}
@@ -275,7 +275,7 @@ export class AddTraveler extends React.Component {
             <div className="field-container col-12 md-col md-col-6">
               <Field
                 name="passengerStatus"
-                component={SelectField}
+                component={Select}
                 floatingLabelText="Passenger Status"
                 style={style.input}
                 errorStyle={style.error}
@@ -292,7 +292,7 @@ export class AddTraveler extends React.Component {
           </div>
           <div className="clearfix">
             <div className="field-container col-12 md-col md-col-6">
-              <RaisedButton
+              <Button
                 type="submit"
                 label="Submit"
                 disabled={!valid}

@@ -1,6 +1,6 @@
 import React from 'react';
-import { TextField, DatePicker, SelectField } from 'redux-form-material-ui';
-import { MenuItem, RaisedButton } from 'material-ui';
+import { TextField, Select } from 'redux-form-material-ui';
+import { MenuItem, Button } from 'material-ui';
 import { Field } from 'redux-form';
 import { adminFormExtensionStyle } from './styles';
 
@@ -25,7 +25,7 @@ export default (props) => {
       <div className="field-container col-12 md-col md-col-6">
         <Field
           name="flightStatus"
-          component={SelectField}
+          component={Select}
           hintText="Flight Status"
           style={adminFormExtensionStyle.input}
           errorStyle={adminFormExtensionStyle.error}
@@ -41,7 +41,7 @@ export default (props) => {
       <div className="field-container col-12 md-col md-col-6">
         <Field
           name="passengerStatus"
-          component={SelectField}
+          component={Select}
           hintText="Passenger Status"
           style={adminFormExtensionStyle.input}
           errorStyle={adminFormExtensionStyle.error}
@@ -58,7 +58,7 @@ export default (props) => {
       <div className="field-container col-12 md-col md-col-6">
         <Field
           name="representative"
-          component={SelectField}
+          component={Select}
           hintText="Assign To"
           style={adminFormExtensionStyle.input}
           errorStyle={adminFormExtensionStyle.error}

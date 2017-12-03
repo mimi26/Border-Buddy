@@ -1,11 +1,13 @@
 import React from 'react';
 import StyledField from './Field';
-import {RaisedButton, MenuItem, Divider} from 'material-ui';
-import {TextField, DatePicker, SelectField, AutoComplete} from 'redux-form-material-ui';
+import {Button, MenuItem, Divider} from 'material-ui';
+import {TextField, Select } from 'redux-form-material-ui';
 import AirlinePicker from './AirlinePicker';
 import {required, phone, email, validateCode, uppercase} from '../utils/validations';
 import countryCodes from '../utils/countryCodes';
 import { formStyle } from './Admin/styles';
+import DatePicker from './DatePicker';
+import CountryCodePicker from './CountryCodePicker';
 
 const Form = (props) => (
 
@@ -34,7 +36,7 @@ const Form = (props) => (
       <div className="field-container col-12 md-col md-col-6">
         <StyledField
           name="requireInterpreter"
-          component={SelectField}
+          component={Select}
           hintText="Are you comfortable speaking English?"
         >
           <MenuItem value="false" primaryText="Yes"/>
@@ -59,11 +61,10 @@ const Form = (props) => (
       <div className="field-container col-12 md-col md-col-6">
         <StyledField
           name="countryCode"
-          component={AutoComplete}
+          component={CountryCodePicker}
           hintText="Country Phone Code"
           validate={required}
           dataSource={Object.values(countryCodes)}
-          filter={AutoComplete.caseInsensitiveFilter}
           fullWidth={true}
         />
       </div>
@@ -78,7 +79,7 @@ const Form = (props) => (
       <div className="field-container col-12 md-col md-col-6">
         <StyledField
           name="connectivity"
-          component={SelectField}
+          component={Select}
           hintText="Do you have a smartphone?"
           validate={!props.isAdmin ? required : undefined}
         >
@@ -144,30 +145,30 @@ const Form = (props) => (
     </div>
     {props.children /* renders the AdminExtension part of the form or any other additional fields you may want */ }
     <div>
-      <RaisedButton
+      <Button
         type="submit"
-        label="Register"
+        raised
         className="submit-traveler-registration"
         disabled={!props.valid}
         primary={true}
         style={formStyle.submitButton}
-      />
+      >Register</Button>
       {
         props.showAdditionalButtons &&
         <div>
-          <RaisedButton 
-            label="Text Traveler" 
+          <Button 
+            raised
             onClick={props.sendText} 
             style={formStyle.adminButton} 
             labelColor="#2d6ea8" 
-          />
-          <RaisedButton 
-            label="Delete Traveler" 
+          >Text Traveler</Button>
+          <Button 
+            raised 
             onClick={props.deleteTraveler} 
             style={formStyle.adminButton} 
             backgroundColor="#bd1c11" 
             labelColor="#FFFFFF" 
-          />
+          >Delete Traveler</Button>
         </div>
       }
     </div>

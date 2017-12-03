@@ -1,12 +1,13 @@
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import createMuiTheme from 'material-ui/styles/createMuiTheme';
 
 import { cyan500, darkBlack, fullBlack,
-} from 'material-ui/styles/colors';
-import {fade} from 'material-ui/utils/colorManipulator';
+} from 'material-ui/colors';
+//commented out to get new version of materialize to work
+//import {fade} from 'material-ui/utils/colorManipulator';
 import spacing from 'material-ui/styles/spacing';
 
 
-const customTheme = getMuiTheme({
+const customTheme = createMuiTheme({
   spacing: spacing,
   fontFamily: '"Josefin Sans", sans-serif',
   palette: {
@@ -21,9 +22,9 @@ const customTheme = getMuiTheme({
     alternateTextColor: "#FFFFFF", // white
     canvasColor: '#FFFFFF', // white
     borderColor: '#C0C0C0', // light grey
-    disabledColor: fade(darkBlack, 0.3),
+    //disabledColor: fade(darkBlack, 0.3),
     pickerHeaderColor: '#2d6ea8',
-    clockCircleColor: fade(darkBlack, 0.07),
+    //clockCircleColor: fade(darkBlack, 0.07),
     shadowColor: fullBlack,
   }
 });

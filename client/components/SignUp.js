@@ -1,9 +1,10 @@
 import React from 'react';
 import {reduxForm, Field} from 'redux-form';
-import {RaisedButton, MenuItem} from 'material-ui';
-import {TextField, DatePicker, SelectField} from 'redux-form-material-ui';
+import {Button, MenuItem} from 'material-ui';
+import {TextField, Select} from 'redux-form-material-ui';
 import AirlinePicker from './AirlinePicker';
 import {required, phone, email, validateCode, uppercase, numbersOnly} from '../utils/validations';
+import DatePicker from './DatePicker';
 
 const SignUp = ({handleSubmit, valid}) => {
   const style = {
@@ -71,7 +72,7 @@ const SignUp = ({handleSubmit, valid}) => {
           <Field
             name="requireInterpreter"
             className="traveler-require-interpreter"
-            component={SelectField}
+            component={Select}
             floatingLabelText="Are you comfortable speaking English?"
             floatingLabelStyle={style.label}
             underlineFocusStyle={style.underline}
@@ -140,7 +141,7 @@ const SignUp = ({handleSubmit, valid}) => {
           <Field
             name="connectivity"
             className="traveler-connectivity"
-            component={SelectField}
+            component={Select}
             floatingLabelText="Do you have a smartphone?"
             floatingLabelStyle={style.label}
             underlineFocusStyle={style.underline}
@@ -241,14 +242,14 @@ const SignUp = ({handleSubmit, valid}) => {
       </div>
       <div className="clearfix">
         <div className="field-container col-12">
-          <RaisedButton
+          <Button
             type="submit"
-            label="Register"
+            raised
             className="submit-traveler-registration"
             disabled={!valid}
             primary={true}
             style={style.button}
-          />
+          >Register</Button>
         </div>
       </div>
     </form>
